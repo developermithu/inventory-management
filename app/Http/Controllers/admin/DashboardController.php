@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -15,6 +16,7 @@ class DashboardController extends Controller
      */
     public function __invoke(Request $request)
     {
+        Gate::authorize('admin.dashboard');
         return view('admin.dashboard');
     }
 }

@@ -34,13 +34,20 @@
             <ul class="vertical-nav-menu">
                 <li class="app-sidebar__heading">Dashboards</li>
                 <li>
-                    <a href="{{route('admin.dashboard')}}" class="mm-active">
+                    <a href="{{route('admin.dashboard')}}" class="{{ Route::is('admin.dashboard') ? 'mm-active' : ''}}">
                         <i class="metismenu-icon pe-7s-rocket"></i>
                         Dashboard
                     </a>
                 </li>
 
-                <li class="app-sidebar__heading">UI Components</li>
+                <li class="app-sidebar__heading">User Management</li>
+
+                <li>
+                    <a href="{{route('admin.roles.index')}}" class="{{ Request::is('admin/roles*') ? 'mm-active' : ''}}">
+                        <i class="metismenu-icon pe-7s-check"></i>
+                        Roles
+                    </a>
+                </li>
 
                 <li>
                     <a href="#">
@@ -62,13 +69,6 @@
                             </a>
                         </li>
                     </ul>
-                </li>
-
-                <li>
-                    <a href="tables-regular.html">
-                        <i class="metismenu-icon pe-7s-display2"></i>
-                        Tables
-                    </a>
                 </li>
 
                 <li class="app-sidebar__heading">Widgets</li>

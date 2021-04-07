@@ -24,4 +24,15 @@ Role::find(1)->users
 User::find(1)
 User::find(1)->role
 
+=== Resource Controller Create ===
+php artisan make:controller RoleController --model=Role
+
+=== when use gate ===
+use Illuminate\Support\Facades\Gate;
+
+=== Custom Blade Component ===
+Providers/AppServiceProvider
+
+=== Custom Admin Service Provider ===
+Providers/RouteServiceProvider
 

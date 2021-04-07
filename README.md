@@ -5,11 +5,12 @@
  2. User Role
 
 #### Migration table edit korle 
-php artisan migrate:fresh  //cmd
+php artisan migrate:fresh  //cmd <br>
 php artisan migrate:fresh --seed //cmd
 #### With Seeder & Migration 
 php artisan make:model Permission -ms //
 #### Check Model Relations
+<pre>
 php artisan tinker  //cmd
 
 Module::find(1)
@@ -26,7 +27,7 @@ Role::find(1)->users
 
 User::find(1)
 User::find(1)->role
-
+</pre>
 #### Resource Controller Create
 php artisan make:controller RoleController --model=Role
 

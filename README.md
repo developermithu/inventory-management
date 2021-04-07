@@ -4,18 +4,15 @@
  1. Admin Role
  2. User Role
 
- ==== Migration table edit korle ====
+#### Migration table edit korle 
 php artisan migrate:fresh  //cmd
 php artisan migrate:fresh --seed //cmd
-
-==== With Seeder & Migration ====
+#### With Seeder & Migration 
 php artisan make:model Permission -ms //
-
-=== Check Model Relations ===
+#### Check Model Relations
 php artisan tinker  //cmd
 
 Module::find(1)
-Module::find(2)
 Module::find(3)
 Module::find(1)->permissions
 
@@ -30,15 +27,15 @@ Role::find(1)->users
 User::find(1)
 User::find(1)->role
 
-=== Resource Controller Create ===
+#### Resource Controller Create
 php artisan make:controller RoleController --model=Role
 
-=== when use gate ===
+#### when use gate 
 use Illuminate\Support\Facades\Gate;
 
-=== Custom Blade Component ===
+#### Custom Blade Component 
 Providers/AppServiceProvider
 
-=== Custom Admin Service Provider ===
+#### Custom Admin Service Provider 
 Providers/RouteServiceProvider
 

@@ -8,6 +8,7 @@ use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
 class RoleController extends Controller
@@ -61,26 +62,21 @@ class RoleController extends Controller
     {
         Gate::authorize('admin.roles.edit');
 
-        if ($role->deletable == false) {
-            Toastr::error('You can not update this data!', 'Sorry!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
-            return redirect()->route('admin.roles.index');
-        } else {
-            $this->validate($request, [
-                'name' => 'required',  //not unique
-                'permissions' => 'required | array',
-                'permissions.*' => 'integer',
-            ]);
+        $this->validate($request, [
+            'name' => 'required',  //not unique
+            'permissions' => 'required | array',
+            'permissions.*' => 'integer',
+        ]);
 
-            $role->update([
-                'name' => $request->name,
-                'slug' => Str::slug($request->name)
-            ]);
+        $role->update([
+            'name' => $request->name,
+            'slug' => Str::slug($request->name)
+        ]);
 
-            $role->permissions()->sync($request->input('permissions'));
+        $role->permissions()->sync($request->input('permissions'));
 
-            Toastr::success('Data updated successfully!', 'Welcome!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
-            return redirect()->route('admin.roles.index');
-        }
+        Toastr::success('Data updated successfully!', 'Welcome!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
+        return redirect()->route('admin.roles.index');
     }
 
     public function destroy(Role $role)

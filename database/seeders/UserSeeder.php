@@ -31,6 +31,7 @@ class UserSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('admin'),
+            'status' => true,
         ]);
 
         User::updateOrCreate([
@@ -38,6 +39,7 @@ class UserSeeder extends Seeder
             'name' => 'User',
             'email' => 'user@gmail.com',
             'password' => Hash::make('user'),
+            'status' => true,
         ]);
     }
 }

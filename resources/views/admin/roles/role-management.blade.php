@@ -10,11 +10,7 @@
                     </i>
                 </div>
                 <div>
-                   @isset($role)
-                       Edit Role
-                       @else 
-                       Create Role
-                   @endisset
+                   {{ isset($role) ? 'Edit' : 'Create' }} Role
                 </div>
             </div>
             <div class="page-title-actions">
@@ -22,7 +18,7 @@
                         <span class="btn-icon-wrapper pr-1 opacity-7">
                             <i class="fas fa-arrow-circle-left    "></i>
                         </span>
-                        Back
+                        Go Back
                     </a>
             </div>    
         </div>

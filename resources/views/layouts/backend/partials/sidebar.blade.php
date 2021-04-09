@@ -50,6 +50,14 @@
                 </li>
 
                 <li>
+                    <a href="{{route('admin.users.index')}}" class="{{ Request::is('admin/users*') ? 'mm-active' : ''}}">
+                        <i class="metismenu-icon pe-7s-users"></i>
+                        Users
+                    </a>
+                </li>
+
+                {{-- dropdown --}}
+                {{-- <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
                         Elements
@@ -69,13 +77,13 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
                 <li class="app-sidebar__heading">Widgets</li>
                 <li>
-                    <a href="dashboard-boxes.html">
-                        <i class="metismenu-icon pe-7s-display2"></i>
-                        Dashboard Boxes
+                    <a href="{{route('admin.backups.index')}}">
+                        <i class="metismenu-icon pe-7s-cloud"></i>
+                        Backups
                     </a>
                 </li>
             </ul>

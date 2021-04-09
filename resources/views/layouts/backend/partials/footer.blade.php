@@ -5,31 +5,29 @@
                 <ul class="nav">
                     <li class="nav-item">
                         <a href="javascript:void(0);" class="nav-link">
-                            Footer Link 1
+                           Startar Admin - 2021
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="javascript:void(0);" class="nav-link">
                             Footer Link 2
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
             <div class="app-footer-right">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a href="javascript:void(0);" class="nav-link">
-                            Footer Link 3
+                        <a href="http://mithu.epyzy.com" target="_blank" class="nav-link">
+                            Developed By <i class="fas fa-arrow-right mx-2"></i> Mithu
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="javascript:void(0);" class="nav-link">
-                            <div class="badge badge-success mr-1 ml-0">
-                                <small>NEW</small>
-                            </div>
-                            Footer Link 4
+                            <i class="fas fa-arrow-right    "></i>
+                            Mithu
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>

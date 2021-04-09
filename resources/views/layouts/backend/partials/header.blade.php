@@ -55,14 +55,14 @@
                         <div class="widget-content-left">
                             <div class="btn-group">
                                 <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                    <img width="42" class="rounded-circle" src="{{asset('assets/images/avatars/1.jpg')}}" alt="">
+                                    <img width="42" class="rounded-circle" src="{{Auth::user()->getFirstMediaUrl('avatar') != null ? Auth::user()->getFirstMediaUrl('avatar') : config('app.placeholder').'160.png'}}" alt="">
                                     <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                 </a>
                                 <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-                                    <button type="button" tabindex="0" class="dropdown-item text-center">
+                                    <a href="{{route('admin.profile.index')}}" tabindex="0" class="dropdown-item text-center">
                                         <i class="fas fa-user-circle  mr-2  "></i>
                                         Profile
-                                    </button>
+                                    </a>
                                     <div tabindex="-1" class="dropdown-divider"></div>
                                     <a href="{{route('logout')}}" tabindex="0" class="dropdown-item text-center" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         <i class="fas fa-arrow-right mr-2"></i>

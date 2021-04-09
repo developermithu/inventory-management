@@ -4,6 +4,12 @@
  1. Admin Role
  2. User Role
 
+ ### Library
+ <pre>
+ Spatie media library
+ Dropify
+ </pre>
+
 #### Migration table edit korle 
 php artisan migrate:fresh  //cmd <br>
 php artisan migrate:fresh --seed //cmd
@@ -39,4 +45,19 @@ Providers/AppServiceProvider
 
 #### Custom Admin Service Provider 
 Providers/RouteServiceProvider
+#### For Backup
+Spatie/Laravel-Backup Package <br>
+Customize PermissionSeeder For Backup <br>
+Setup Mailtrap Email <br>
+php artisan backup:run //cmd <br>
+php artisan backup:clean //cmd <br>
 
+## For Mysqldump backup error
+set config/database.com under mysql []
+ <pre>
+            'dump' => [
+                'dump_binary_path' => 'C:\xampp\mysql\bin', // only the path, so without `mysqldump` or `pg_dump`
+                'use_single_transaction',
+                'timeout' => 60 * 5, // 5 minute timeout
+            ],
+</pre>

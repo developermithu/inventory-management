@@ -35,7 +35,7 @@
                 <li class="app-sidebar__heading">Dashboards</li>
                 <li>
                     <a href="{{route('admin.dashboard')}}" class="{{ Route::is('admin.dashboard') ? 'mm-active' : ''}}">
-                        <i class="metismenu-icon pe-7s-rocket"></i>
+                        <i class="metismenu-icon pe-7s-home"></i>
                         Dashboard
                     </a>
                 </li>
@@ -80,12 +80,21 @@
                 </li> --}}
 
                 <li class="app-sidebar__heading">Widgets</li>
+
                 <li>
-                    <a href="{{route('admin.backups.index')}}">
+                    <a href="{{route('admin.backups.index')}}" class="{{ Request::is('admin/backups*') ? 'mm-active' : ''}}">
                         <i class="metismenu-icon pe-7s-cloud"></i>
                         Backups
                     </a>
                 </li>
+
+                <li>
+                    <a href="{{route('admin.pages.index')}}" class="{{ Request::is('admin/pages*') ? 'mm-active' : ''}}">
+                        <i class="metismenu-icon pe-7s-news-paper"></i>
+                        Pages
+                    </a>
+                </li>
+
             </ul>
         </div>
     </div>

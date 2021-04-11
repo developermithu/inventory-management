@@ -92,5 +92,28 @@ class PermissionSeeder extends Seeder
             'name' => 'Delete Backups',
             'slug' => 'admin.backups.destroy',
         ]);
+
+        // Page Management
+        $moduleAdminPage = Module::updateOrCreate(['name' => 'Page Management']);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAdminPage->id,
+            'name' => 'Access Page',
+            'slug' => 'admin.pages.index',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAdminPage->id,
+            'name' => 'Create Page',
+            'slug' => 'admin.pages.create',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAdminPage->id,
+            'name' => 'Edit Page',
+            'slug' => 'admin.pages.edit',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAdminPage->id,
+            'name' => 'Delete Page',
+            'slug' => 'admin.pages.destroy',
+        ]);
     }
 }

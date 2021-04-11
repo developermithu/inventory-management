@@ -13,6 +13,7 @@
 #### Migration table edit korle 
 php artisan migrate:fresh  //cmd <br>
 php artisan migrate:fresh --seed //cmd
+php artisan db:seed --class=UserSeeder //cmd single seeder
 #### With Seeder & Migration 
 php artisan make:model Permission -ms //
 #### Check Model Relations

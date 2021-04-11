@@ -59,11 +59,19 @@
                                     <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                 </a>
                                 <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                                    
                                     <a href="{{route('admin.profile.index')}}" tabindex="0" class="dropdown-item text-center">
                                         <i class="fas fa-user-circle  mr-2  "></i>
                                         Profile
                                     </a>
-                                    <div tabindex="-1" class="dropdown-divider"></div>
+
+                                    <a href="{{route('admin.profile.password.change')}}" tabindex="0" class="dropdown-item text-center">
+                                        <i class="fas fa-key  mr-2  "></i>
+                                        Change password
+                                    </a>
+
+                                    {{-- <div tabindex="-1" class="dropdown-divider"></div> --}}
+
                                     <a href="{{route('logout')}}" tabindex="0" class="dropdown-item text-center" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         <i class="fas fa-arrow-right mr-2"></i>
                                         Logout
@@ -74,6 +82,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="widget-content-left  ml-3 header-user-info">
                             <div class="widget-heading">
                                 {{Auth::user()->name}}

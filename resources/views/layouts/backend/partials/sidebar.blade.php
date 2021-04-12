@@ -32,7 +32,11 @@
     <div class="scrollbar-sidebar">
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
-                <li class="app-sidebar__heading">Dashboards</li>
+
+                {{-- admin-sidebar-component --}}
+                <x-admin-sidebar/>
+
+             {{-- <li class="app-sidebar__heading">Dashboards</li>
                 <li>
                     <a href="{{route('admin.dashboard')}}" class="{{ Route::is('admin.dashboard') ? 'mm-active' : ''}}">
                         <i class="metismenu-icon pe-7s-home"></i>
@@ -48,13 +52,12 @@
                         Roles
                     </a>
                 </li>
-
                 <li>
                     <a href="{{route('admin.users.index')}}" class="{{ Request::is('admin/users*') ? 'mm-active' : ''}}">
                         <i class="metismenu-icon pe-7s-users"></i>
                         Users
                     </a>
-                </li>
+                </li> --}}
 
                 {{-- dropdown --}}
                 {{-- <li>
@@ -79,7 +82,7 @@
                     </ul>
                 </li> --}}
 
-                <li class="app-sidebar__heading">Widgets</li>
+                {{-- <li class="app-sidebar__heading">Widgets</li>
 
                 <li>
                     <a href="{{route('admin.backups.index')}}" class="{{ Request::is('admin/backups*') ? 'mm-active' : ''}}">
@@ -87,13 +90,18 @@
                         Backups
                     </a>
                 </li>
-
                 <li>
                     <a href="{{route('admin.pages.index')}}" class="{{ Request::is('admin/pages*') ? 'mm-active' : ''}}">
                         <i class="metismenu-icon pe-7s-news-paper"></i>
                         Pages
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('admin.menus.index')}}" class="{{ Request::is('admin/menus*') ? 'mm-active' : ''}}">
+                        <i class="metismenu-icon pe-7s-menu"></i>
+                        Menus
+                    </a>
+                </li>   --}}
 
             </ul>
         </div>

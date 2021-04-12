@@ -93,8 +93,8 @@ class PermissionSeeder extends Seeder
             'slug' => 'admin.backups.destroy',
         ]);
 
-        // Page Management
-        $moduleAdminPage = Module::updateOrCreate(['name' => 'Page Management']);
+        // Page
+        $moduleAdminPage = Module::updateOrCreate(['name' => 'Page']);
         Permission::updateOrCreate([
             'module_id' => $moduleAdminPage->id,
             'name' => 'Access Page',
@@ -114,6 +114,34 @@ class PermissionSeeder extends Seeder
             'module_id' => $moduleAdminPage->id,
             'name' => 'Delete Page',
             'slug' => 'admin.pages.destroy',
+        ]);
+
+        // Menu
+        $moduleAdminMenu = Module::updateOrCreate(['name' => 'Menu']);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAdminMenu->id,
+            'name' => 'Access Menu',
+            'slug' => 'admin.menus.index',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAdminMenu->id,
+            'name' => 'Access Menu Builder',
+            'slug' => 'admin.menus.builder',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAdminMenu->id,
+            'name' => 'Create Menu',
+            'slug' => 'admin.menus.create',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAdminMenu->id,
+            'name' => 'Edit Menu',
+            'slug' => 'admin.menus.edit',
+        ]);
+        Permission::updateOrCreate([
+            'module_id' => $moduleAdminMenu->id,
+            'name' => 'Delete Menu',
+            'slug' => 'admin.menus.destroy',
         ]);
     }
 }

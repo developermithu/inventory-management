@@ -4,10 +4,14 @@
  1. Admin Role
  2. User Role
 
- ### Library
+ ### Library & Packages
  <pre>
- Spatie media library
- Dropify
+ Spatie /Laravel Backup
+ Spatie Media Library
+ Dropify for showing upload file 
+Browner12/helpers
+nestable2 for drag & drop
+sweetalert2
  </pre>
 
 #### Migration table edit korle 
@@ -57,7 +61,7 @@ php artisan backup:clean //cmd <br>
 set config/database.com under mysql []
  <pre>
             'dump' => [
-                'dump_binary_path' => 'C:\xampp\mysql\bin', // only the path, so without `mysqldump` or `pg_dump`
+                'dump_binary_path' => 'C:\xampp\mysql\bin', 
                 'use_single_transaction',
                 'timeout' => 60 * 5, // 5 minute timeout
             ],

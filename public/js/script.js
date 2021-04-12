@@ -1,3 +1,8 @@
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!********************************!*\
+  !*** ./resources/js/script.js ***!
+  \********************************/
 function removeData(id) {
   Swal.fire({
     title: 'Are you sure?',
@@ -9,7 +14,9 @@ function removeData(id) {
     confirmButtonText: 'Yes, delete it!'
   }).then(function (result) {
     if (result.isConfirmed) {
-     document.getElementById('delete-form-'+id).submit();
+      console.log(id);
     }
   });
 }
+/******/ })()
+;

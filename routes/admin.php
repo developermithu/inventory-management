@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\admin\BackupController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\MenuBuilderController;
+use App\Http\Controllers\admin\MenuController;
 use App\Http\Controllers\admin\PageController;
 use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\RoleController;
@@ -38,3 +40,17 @@ Route::delete('backups', [BackupController::class, 'clean'])->name('backups.clea
 
 // Pages
 Route::resource('pages', PageController::class);
+
+// Menus
+Route::resource('menus', MenuController::class)->except(['show']);
+Route::group(['as' => 'menus.', 'prefix' => 'menus/{id}'], function () {
+    Route::post('order', [MenuBuilderController::class, 'order'])->name('order');
+    Route::get('builder', [MenuBuilderController::class, 'index'])->name('builder');
+
+    Route::get('item/create', [MenuBuilderController::class, 'itemCreate'])->name('item.create');
+    Route::post('item/store', [MenuBuilderController::class, 'itemStore'])->name('item.store');
+
+    Route::get('item/{itemId}/edit', [MenuBuilderController::class, 'itemEdit'])->name('item.edit');
+    Route::put('item/{itemId}/update', [MenuBuilderController::class, 'itemUpdate'])->name('item.update');
+    Route::delete('item/{itemId}/destroy', [MenuBuilderController::class, 'itemDestroy'])->name('item.destroy');
+});

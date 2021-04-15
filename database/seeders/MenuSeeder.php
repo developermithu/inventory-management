@@ -91,7 +91,7 @@ class MenuSeeder extends Seeder
             'type' => 'item',
             'order' => 10,
             'title' => 'Settings',
-            'url' => '/admin/settings',
+            'url' => '/admin/settings/general',
             'icon_class' => 'metismenu-icon pe-7s-settings',
         ]);
     }

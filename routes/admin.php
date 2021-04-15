@@ -7,6 +7,7 @@ use App\Http\Controllers\admin\MenuController;
 use App\Http\Controllers\admin\PageController;
 use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\RoleController;
+use App\Http\Controllers\admin\SettingController;
 use App\Http\Controllers\admin\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -53,4 +54,19 @@ Route::group(['as' => 'menus.', 'prefix' => 'menus/{id}'], function () {
     Route::get('item/{itemId}/edit', [MenuBuilderController::class, 'itemEdit'])->name('item.edit');
     Route::put('item/{itemId}/update', [MenuBuilderController::class, 'itemUpdate'])->name('item.update');
     Route::delete('item/{itemId}/destroy', [MenuBuilderController::class, 'itemDestroy'])->name('item.destroy');
+});
+
+// Settings
+Route::group(['as' => 'settings.', 'prefix' => 'settings'], function () {
+    Route::get('general', [SettingController::class, 'general'])->name('general');
+    Route::put('general', [SettingController::class, 'generalUpdate'])->name('general.update');
+
+    Route::get('appearance', [SettingController::class, 'appearance'])->name('appearance');
+    Route::put('appearance', [SettingController::class, 'appearanceUpdate'])->name('appearance.update');
+
+    Route::get('mail', [SettingController::class, 'mail'])->name('mail');
+    Route::put('mail', [SettingController::class, 'mailUpdate'])->name('mail.update');
+
+    Route::get('socialite', [SettingController::class, 'socialite'])->name('socialite');
+    Route::put('socialite', [SettingController::class, 'socialiteUpdate'])->name('socialite.update');
 });

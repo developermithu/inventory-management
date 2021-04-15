@@ -12,6 +12,8 @@
 Browner12/helpers
 nestable2 for drag & drop
 sweetalert2
+env:set command
+socialite
  </pre>
 
 #### Migration table edit korle 

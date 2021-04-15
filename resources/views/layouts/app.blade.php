@@ -9,6 +9,13 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!--  FavIcon  Icon-->
+    <link rel="shortcut icon" href="{{Storage::url(setting('site_favicon'))}}">
+    <!-- Meta Tag -->
+    <meta name="description" content="Mithu is a full-stack web and wordpress developer who love to design & develop website.">
+    <meta name="keywords" content="developermithu, webdevelopermithu, full-satck webdevelopermithu,mithu, mithu das, mithu105">
+    <meta name="author" content="developermithu" />
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -56,6 +63,10 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                    <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
+                                        {{ __('Dashboard') }}
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

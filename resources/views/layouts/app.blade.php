@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!--  FavIcon  Icon-->
-    <link rel="shortcut icon" href="{{Storage::url(setting('site_favicon'))}}">
+    {{-- <link rel="shortcut icon" href="{{Storage::url(setting('site_favicon'))}}"> --}}
     <!-- Meta Tag -->
     <meta name="description" content="Mithu is a full-stack web and wordpress developer who love to design & develop website.">
     <meta name="keywords" content="developermithu, webdevelopermithu, full-satck webdevelopermithu,mithu, mithu das, mithu105">

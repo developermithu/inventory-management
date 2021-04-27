@@ -1,3 +1,4 @@
+
 ==== Migration table edit korle ====
 php artisan migrate:fresh  //cmd
 php artisan migrate:fresh --seed //cmd

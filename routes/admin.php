@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\RoleController;
 use App\Http\Controllers\admin\SettingController;
 use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 

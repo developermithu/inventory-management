@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="position-relative form-group">
                                     <label for="url">URL for the menu item</label>
-                                    <input name="url" id="url" value="{{ $menuItem->url ?? old('url')}}" type="text" class="form-control @error('url') is-invalid @enderror">
+                                    <input name="url" id="url" value="{{ $menuItem->url ?? old('url')}}" type="text" class="form-control @error('url') is-invalid @enderror" placeholder="/admin/name..">
                                     @error('url')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

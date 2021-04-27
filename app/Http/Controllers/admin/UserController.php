@@ -52,7 +52,7 @@ class UserController extends Controller
             $user->addMedia($request->avatar)->toMediaCollection('avatar');
         }
 
-        Toastr::success('User created successfully!', 'Welcome!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
+        Toastr::success('User created successfully.');
         return redirect()->route('admin.users.index');
     }
 
@@ -93,8 +93,7 @@ class UserController extends Controller
         if ($request->hasFile('avatar')) {
             $user->addMedia($request->avatar)->toMediaCollection('avatar');
         }
-
-        Toastr::success('Data updated !', 'Welcome!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
+        Toastr::success('Data updated');
         return redirect()->route('admin.users.index');
     }
 
@@ -102,7 +101,7 @@ class UserController extends Controller
     {
         Gate::authorize('admin.users.destroy');
         $user->delete();
-        Toastr::success('Data deleted successfully!', 'Welcome!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
+        Toastr::success('Data deleted successfully.');
         return back();
     }
 }

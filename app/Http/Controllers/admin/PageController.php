@@ -49,7 +49,7 @@ class PageController extends Controller
             $page->addMedia($request->image)->toMediaCollection('image');
         }
 
-        Toastr::success('Page created successfully!', 'Welcome!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
+        Toastr::success('Page created successfully');
         return redirect()->route('admin.pages.index');
     }
 
@@ -88,7 +88,7 @@ class PageController extends Controller
             $page->addMedia($request->image)->toMediaCollection('image');
         }
 
-        Toastr::success('Page updated successfully!', 'Welcome!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
+        Toastr::success('Page updated successfully!');
         return redirect()->route('admin.pages.index');
     }
 
@@ -96,7 +96,7 @@ class PageController extends Controller
     {
         Gate::authorize('admin.pages.destroy');
         $page->delete();
-        Toastr::success('Page deleted successfully!', 'Welcome!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
+        Toastr::success('Page deleted successfully');
         return back();
     }
 }

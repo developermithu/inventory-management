@@ -88,7 +88,7 @@
                              @endif
 
                             @if (Auth::user()->hasPermission('admin.pages.destroy'))
-                                 <button type="button" onclick="removeData('{{$page->id}}')" class="btn btn-danger btn-sm">
+                                 <button type="button" onclick="removeData({{$page->id}})" class="btn btn-danger btn-sm">
                                     <i class="fas fa-trash mr-1"></i> Delete
                                 </button>
                                 <form id="delete-form-{{$page->id}}" action="{{route('admin.pages.destroy', $page->id)}}" method="post" style="display: none">
@@ -96,7 +96,6 @@
                                     @method('DELETE')
                                 </form>
                                 @endif
-
                                 </td>
                             </tr>
                             @endforeach

@@ -39,7 +39,7 @@ class MenuController extends Controller
             'deletable' => true,
         ]);
 
-        Toastr::success('Menu created successfully!', 'Welcome!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
+        Toastr::success('Menu created successfully!');
         return redirect()->route('admin.menus.index');
     }
 
@@ -68,7 +68,7 @@ class MenuController extends Controller
             'deletable' => true,
         ]);
 
-        Toastr::success('Menu updated successfully!', 'Welcome!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
+        Toastr::success('Menu updated successfully.');
         return redirect()->route('admin.menus.index');
     }
 
@@ -78,9 +78,9 @@ class MenuController extends Controller
 
         if ($menu->deletable == true) {
             $menu->delete();
-            Toastr::success('Menu deleted successfully!', 'Welcome!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
+            Toastr::success('Menu deleted successfully!');
         } else {
-            Toastr::error('You can\'t delete system menu.', 'Sorry!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
+            Toastr::error('You can\'t delete system menu item.');
         }
         return back();
     }

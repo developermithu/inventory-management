@@ -64,7 +64,7 @@ class BackupController extends Controller
         // start the backup process //php artisan backup:run
         Artisan::call('backup:run');
 
-        Toastr::success('New backup created !', 'Success!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
+        Toastr::success('New backup created.');
         return back();
     }
 
@@ -110,7 +110,7 @@ class BackupController extends Controller
         if ($disk->exists(config('backup.backup.name') . '/' . $file_name)) {
             $disk->delete(config('backup.backup.name') . '/' . $file_name);
         }
-        Toastr::success('Data deleted successfully !', 'Welcome!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
+        Toastr::success('Data deleted successfully.');
         return back();
     }
 
@@ -119,7 +119,7 @@ class BackupController extends Controller
         Gate::authorize('admin.backups.destroy');
         Artisan::call('backup:clean');  //php artisan backup:clean
         
-        Toastr::success('Old backup cleaned successfully !', 'Welcome!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
+        Toastr::success('Old backup cleaned successfully.');
         return back();
     }
 }

@@ -70,7 +70,7 @@ class MenuBuilderController extends Controller
             'icon_class' => $request->icon_class,
         ]);
 
-        Toastr::success('Menu item created successfully!', 'Welcome!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
+        Toastr::success('Menu item created successfully');
         return redirect()->route('admin.menus.builder', $menu->id);
     }
 
@@ -108,21 +108,20 @@ class MenuBuilderController extends Controller
             'icon_class' => $request->icon_class,
         ]);
 
-        Toastr::success('Menu item updated successfully!', 'Welcome!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
+        Toastr::success('Menu item updated successfully');
         return redirect()->route('admin.menus.builder', $menu->id);
     }
 
     public function itemDestroy($id, $itemId)
     {
         Gate::authorize('admin.menus.destroy');
-
         // return Menu::findOrFail($id)->menuItems;
-        // Menu::findOrFail($id)->menuItems()->findOrFail($itemId)->delete();
-        $menu = Menu::findOrFail($id);
-        $menuItem = MenuItem::where('menu_id', $menu->id)->findOrFail($itemId);
-        $menuItem->delete();
+        // $menu = Menu::findOrFail($id);
+        // $menuItem = MenuItem::where('menu_id', $menu->id)->findOrFail($itemId);
+        // $menuItem->delete();
 
-        Toastr::success('Menu item deleted successfully!', 'Welcome!', ["progressBar" => "true", "positionClass" => "toast-bottom-right"]);
+        Menu::findOrFail($id)->menuItems()->findOrFail($itemId)->delete();
+        Toastr::success('Menu item deleted successfully.');
         return back();
     }
 }

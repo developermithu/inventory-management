@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\BackupController;
+use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\MenuBuilderController;
 use App\Http\Controllers\admin\MenuController;
@@ -8,10 +9,9 @@ use App\Http\Controllers\admin\PageController;
 use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\RoleController;
 use App\Http\Controllers\admin\SettingController;
+use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\admin\UserController;
-use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
-
 
 
 // Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth']], function () {
@@ -20,7 +20,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 //Go to RouteServiceProvider For Details
-
 Route::get('/dashboard', DashboardController::class)->name('dashboard');
 
 // Users and Roles
@@ -71,3 +70,7 @@ Route::group(['as' => 'settings.', 'prefix' => 'settings'], function () {
     Route::get('socialite', [SettingController::class, 'socialite'])->name('socialite');
     Route::put('socialite', [SettingController::class, 'socialiteUpdate'])->name('socialite.update');
 });
+
+// All Resource Controller
+Route::resource('suppliers', SupplierController::class);
+Route::resource('customers', CustomerController::class);

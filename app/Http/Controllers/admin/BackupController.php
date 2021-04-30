@@ -12,8 +12,7 @@ use Illuminate\Support\Facades\Storage;
 
 class BackupController extends Controller
 {
-
-
+    
     public function index()
     {
         Gate::authorize('admin.backups.index');

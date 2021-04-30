@@ -1,15 +1,20 @@
 <?php
 
+use App\Http\Controllers\Admin\AjaxController;
 use App\Http\Controllers\admin\BackupController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\MenuBuilderController;
 use App\Http\Controllers\admin\MenuController;
 use App\Http\Controllers\admin\PageController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\admin\ProfileController;
+use App\Http\Controllers\Admin\PurchaseController;
 use App\Http\Controllers\admin\RoleController;
 use App\Http\Controllers\admin\SettingController;
 use App\Http\Controllers\Admin\SupplierController;
+use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\admin\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -72,5 +77,13 @@ Route::group(['as' => 'settings.', 'prefix' => 'settings'], function () {
 });
 
 // All Resource Controller
-Route::resource('suppliers', SupplierController::class);
-Route::resource('customers', CustomerController::class);
+Route::resource('suppliers', SupplierController::class)->except('show');
+Route::resource('customers', CustomerController::class)->except('show');
+Route::resource('units', UnitController::class)->except('show');
+Route::resource('categories', CategoryController::class)->except('show');
+Route::resource('products', ProductController::class)->except('show');
+Route::resource('purchases', PurchaseController::class)->except('show');
+
+// Ajax Route Controller prefix->admin
+Route::get('get-category', [AjaxController::class, 'getCategory'])->name('get-category');
+Route::get('get-product', [AjaxController::class, 'getProduct'])->name('get-product');

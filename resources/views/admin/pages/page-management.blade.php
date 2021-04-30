@@ -1,4 +1,5 @@
 @extends('layouts.backend.app')
+@section('title', 'Page Management | Dashboard')
 
 @push('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css"/>

@@ -1,4 +1,5 @@
 @extends('layouts.backend.app')
+@section('title', 'Change Password | Dashboard')
 
 @push('css')
 

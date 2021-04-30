@@ -1,4 +1,5 @@
 @extends('layouts.backend.app')
+@section('title', 'Menu Item Management | Dashboard')
 
 @section('content')
 <div class="app-main__inner">
@@ -97,8 +98,8 @@
                                     </select>
                                 </div>
                                 <div class="position-relative form-group">
-                                    <label for="icon_class">Fontawesome icon class 
-                                        <a href="https://fontawesome.com/icons" target="_blank">(use fontawesome icon class)</a>
+                                    <label for="icon_class">Icon class 
+                                        <a href="https://demo.dashboardpack.com/architectui-html-free/elements-icons.html" target="_blank">(Icon class)</a>
                                     </label>
                                     <input name="icon_class" id="icon_class" value="{{ $menuItem->icon_class ?? old('icon_class')}}" type="text" class="form-control @error('icon_class') is-invalid @enderror">
                                     @error('icon_class')

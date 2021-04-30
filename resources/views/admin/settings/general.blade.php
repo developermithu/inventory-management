@@ -1,4 +1,5 @@
 @extends('layouts.backend.app')
+@section('title', 'General Settings | Dashboard')
 
 @section('content')
 <div class="app-main__inner">

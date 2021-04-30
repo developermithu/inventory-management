@@ -1,4 +1,5 @@
 @extends('layouts.backend.app')
+@section('title', 'Inventory Management | Dashboard')
 
 @section('content')
 <div class="app-main__inner">

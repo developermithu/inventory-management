@@ -1,6 +1,6 @@
 ## Laravel Inventory Management System
 
-### Feature
+### Feature & Functionality
 1) User Management
 2) Supplier Management
 3) Customer Management

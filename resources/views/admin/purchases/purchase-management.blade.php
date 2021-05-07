@@ -182,10 +182,7 @@
                 }
             });
         })
-    });
-</script>
-<script>
-    $(function(){
+
         $('#category_name').on('change', function(){
             var category_name = $(this).val();
             $.ajax({
@@ -195,12 +192,13 @@
                 success: function(data){
                     var html = ' <option value="">Select Product</option>';
                     $.each(data, function(key, value){
-                        html+=  '<option value="'+value.id+'">'+value.name+'</option>';
+                        // html+=  '<option value="'+value.id+'">'+value.name+'</option>';
                     });
                     $('#product_name').html(html);
                 }
             });
         })
+
     });
 </script>
 @endpush

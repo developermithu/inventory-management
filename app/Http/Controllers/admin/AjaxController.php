@@ -19,8 +19,10 @@ class AjaxController extends Controller
 
     public function getProduct(Request $request)
     {
-        $allProduct = Product::where('category_id', $request->category_name)->get();
-        dd($allProduct->toArray());
+        // return 'ok';
+        $category_id = $request->category_name;
+        $allProduct = Product::where('category_id', $category_id)->get();
+        dd($allProduct);
         // return response()->json($allProduct);
     }
 }

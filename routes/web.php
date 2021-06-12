@@ -14,7 +14,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Socialite Login 
+// Socialite Login
 Route::get('/login/{provider}', [LoginController::class, 'redirectToProvider'])->name('login.provider');
 Route::get('/login/{provider}/callback', [LoginController::class, 'handleProviderCallback'])->name('login.callback');
 
